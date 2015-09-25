@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get 'welcome/index'
+
+  get 'welcome/loggedin'
+
+  devise_for :users, :controllers => { registrations: 'registrations' }
   root 'setup#index'
   get '/setup' => 'setup#index'
   # The priority is based upon order of creation: first created -> highest priority.
